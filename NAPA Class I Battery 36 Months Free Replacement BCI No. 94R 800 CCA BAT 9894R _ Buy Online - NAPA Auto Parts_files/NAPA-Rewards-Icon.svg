@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 508.5 565.7">
+  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke-width: 7.7px;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+        stroke: #29307d;
+        stroke-miterlimit: 10;
+      }
+
+      .st1 {
+        stroke-width: 19.2px;
+      }
+
+      .st2 {
+        stroke-width: 15.8px;
+      }
+
+      .st3 {
+        stroke-width: 18.7px;
+      }
+
+      .st4 {
+        fill: #29307d;
+        font-family: NAPASans-CondRegular, 'NAPA Sans';
+        font-size: 184px;
+      }
+    </style>
+  </defs>
+  <path class="st1" d="M420.1,179.8l-72.8-126.1c-3.9-6.7-11.1-10.9-18.8-10.9h-145.6c-7.8,0-14.9,4.1-18.8,10.9l-72.8,126.1c-3.9,6.7-3.9,15,0,21.7l38.6,66.8,15.4,26.6,18.9,32.7c3.9,6.7,11.1,10.9,18.8,10.9h145.6c7.8,0,14.9-4.1,18.8-10.9l34.2-59.3,38.6-66.8c3.9-6.7,3.9-15,0-21.7h0Z"/>
+  <text class="st4" transform="translate(214.1 250.1)"><tspan x="0" y="0">$</tspan></text>
+  <path class="st1" d="M255.9,362.1l-91.7,161.3-34.5-64.1-76.4-2.5,95.3-158.8M146.4,298"/>
+  <path class="st1" d="M364,298l95.3,158.8-76.4,2.5-34.5,64.1-92.8-161.4M366.2,298"/>
+  <path class="st2" d="M247.9,365.1h15.8"/>
+  <line class="st0" x1="145.6" y1="437.1" x2="181.3" y2="368.1"/>
+  <line class="st0" x1="373.4" y1="437.4" x2="334.5" y2="370.1"/>
+  <path class="st3" d="M384.2,182.1l-56.7-98.1c-3-5.2-8.6-8.5-14.7-8.5h-113.3c-6,0-11.6,3.2-14.7,8.5l-56.7,98.1c-3,5.2-3,11.7,0,16.9l30,52,12,20.7,14.7,25.4c3,5.2,8.6,8.5,14.7,8.5h113.3c6,0,11.6-3.2,14.7-8.5l26.6-46.1,30-52c3-5.2,3-11.7,0-16.9h0Z"/>
+</svg>

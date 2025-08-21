@@ -1,0 +1,99 @@
+function messageDuration() {
+  var msgDuration = $(".pdp-videoGallery").attr("data-unmute");
+    setTimeout(function() {
+      $(".unmute").addClass("hide");
+    }, msgDuration * 1000);
+};
+
+function removeOpcaity(){
+  $("#s7viewer_swatches").css("opacity","1");
+};
+let vimeoVideos = {
+  init: function (videoIds) {
+    if (videoIds.length) {
+      videoIds.forEach(function (videoId) {
+        
+      if(videoId !== ""){  
+        var response = fetch('https://vimeo.com/api/v2/video/' + videoId + '.json', {
+          method: 'GET',
+        })
+          .then(function (response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response.json()
+            
+          })
+          .then(function (res) {
+            var data = res[0]
+            var videoThumbnail = data.thumbnail_small
+            var videoTitle = data.title
+            var list = '<li onclick="vimeoVideos.showModal(' + videoId + ')"><img src="' + videoThumbnail + '" alt="' + videoTitle + '" width="100" height="75" /></li>';
+           // var result = DOMPurify.sanitize(list);
+           try{
+           
+            let doc =  new DOMParser().parseFromString(list, "text/html");
+           let resultData = doc.documentElement.innerHTML;
+            document.getElementById('videoWrapper').innerHTML += resultData
+           }catch(err){
+            console.log('ERRRORR~~~~~~~~~~~~>');
+            var result = DOMPurify.sanitize(list);
+              document.getElementById('videoWrapper').innerHTML += result
+           }          
+              // '<li onclick="vimeoVideos.showModal(' + videoId + ')"><img src="' + videoThumbnail + '" alt="' + videoTitle + '" width="100" height="75" /></li>'
+          }).catch(function(error) {
+              document.getElementById('videoWrapper').innerHTML +=
+               '<li onclick="vimeoVideos.showModal(' + videoId + ')" class="noThumb"><img src="' + "https://i.vimeocdn.com/video/992336777_100x75.jpg" + '" alt="' + "" + '" width="100" height="75" /></li>'
+              console.log(error);
+          });
+        }  
+      })
+    }
+  },
+  showModal: function (id) {
+    var productId = $("#videoWrapper").attr("attr-pdpvideoid");
+    var language = NAPA.config.encodedContextPath;
+    if(language === "/en"){
+      unmuteText = "Adjust player volume to unmute";
+    }
+    if(language === "/es"){
+      unmuteText = "Ajustar el volumen del reproductor para activar el sonido";
+    }
+    if(language === "/fr"){
+      unmuteText = "Ajustez le volume du lecteur pour rétablir le son";
+    }
+    
+    analytics.ClickedVideo360.videoGalleryTrackEvent(productId);
+    
+    $("#s7viewer_swatches").css("opacity","0.75");
+    var videoModal = document.createElement('div')
+    videoModal.setAttribute('id', 'videoModal')
+    document.body.appendChild(videoModal)
+    document.getElementById('videoModal').innerHTML = '<div class="unmute">' + unmuteText + '</div><a class="closeVideo" onclick="this.parentNode.remove(); removeOpcaity(); document.body.setAttribute(\'style\', \'overflow:auto\')">&times;</a>'
+      +'<div class="videoPlayer" style="padding: 56.25% 0 0 0; position: relative; width: 100%; height: 100%; max-width: 50vmax">'
+      +'  <iframe id="vimVid" onload="messageDuration()"'
+      +'    src="https://player.vimeo.com/video/'+ id + '?dnt=1&autoplay=1&muted=1&loop=1&color=ffc72c&title=0&byline=0&portrait=0"'
+      +'    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"'
+      +'    frameborder="0"'
+       +'   allow="fullscreen" allow="autoplay"'
+      +'    allowfullscreen'
+     +'     title=""'
+     +'   ></iframe>'
+    +'</div>'
+
+    
+    document.body.setAttribute('style', 'overflow:hidden')
+  },
+}
+
+$(".closeVideo").on("click", function(){
+  $("#s7viewer_swatches").css("opacity","1");
+});
+
+$(document).ready(function () {
+  $('.pdp-image-product-main').hover(function() {
+    $('#s7viewer_swatches_listbox').css('z-index', '9999999');
+  }, function() {
+       $('.pdp-image-product-main').css('z-index', '-1');
+  });
+});

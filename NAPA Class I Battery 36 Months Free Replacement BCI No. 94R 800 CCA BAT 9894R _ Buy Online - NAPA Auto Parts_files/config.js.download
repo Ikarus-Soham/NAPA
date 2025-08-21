@@ -1,0 +1,127 @@
+/* BEGIN Configuration */
+
+if(typeof _cls_config === "undefined") _cls_config = {};
+
+// Set Throttling
+_cls_config.enabledByChance = 0.85;
+
+/* BEGIN ajax */
+ _cls_config.ajaxRecordMetadata="never";
+ _cls_config.ajaxRecordResponseHeaders="and(tld,statusgte(400))";
+ _cls_config.ajaxRecordResponseBody="and(tld,statusgte(400))";
+ _cls_config.ajaxRecordRequestHeaders="and(tld,statusgte(400))";
+ _cls_config.ajaxRecordRequestBody="and(tld,statusgte(400))";
+ _cls_config.ajaxRecordStats="always";
+ _cls_config.interceptAjax=true;
+/* END ajax */
+
+/* BEGIN behavior */
+ _cls_config.iframesAutoInject=true;
+ _cls_config.recordHovers=true;
+ _cls_config.recordMouseMoves=true;
+ _cls_config.recordScrolls=true;
+/* END behavior */
+/*BEGIN MASKING*/
+
+//Value Masking (INPUT)
+ _cls_config.valueMaskingMode = "whitelist";
+ _cls_config.maskWhitelistValueById = ["CreateAccountEmail","loginemail","emailid","find-a-store-input","vyear","vmake","vmodel","vstate","productQty_u","address1","addlPickupEmail","geo-inputText","subEmail","confEmail"];
+ _cls_config.maskBlacklistValueById = [];
+ _cls_config.maskWhitelistValueByClass = ["focus-vin","geo-license-plate-input","geo-pod-qty-input","order-qty","nol-store-location","nol-shipping-title","geo-license-plate-input-container"];
+ _cls_config.maskBlacklistValueByClass = [];
+ _cls_config.valueWhitelistMaskSimpleSelector = ["#plate > div > div > div.geo-license-plate-input-container > div > input[type=text]"];
+ _cls_config.valueBlacklistMaskSimpleSelector = [];
+
+//DOM Masking
+ _cls_config.domMaskingMode = "blacklist";
+ _cls_config.domWhitelistMaskContentById = [];
+ _cls_config.domBlacklistMaskContentById = ["firstName","lastName","firstname","lastname","CreateAccountEmail","CreateAccountPassword","mobileNumber","address1","address2","addlPickupFirstname","addlPickupLastName","addlPickupEmail","addlPickupPhoneNo","accountSignIn","current-phone-num","shipping-address-lists","billing-address-lists"];
+ _cls_config.domWhitelistMaskContentByClass = [];
+ _cls_config.domBlacklistMaskContentByClass = ["cls_mask","contact-details-container","birthday-fields-container","summary-view","billing-summary","payment-billing-wrapper","shipping-summary","shipping-address","user-info-data","customer-name","phone-number","mail-id","my-vehical-delete-list"];
+ _cls_config.domWhitelistMaskSimpleSelector = [];
+ _cls_config.domBlacklistMaskSimpleSelector = [
+"#leftRail > div.shipping-order.marg-lgv-bot-md > div:nth-child(2) > div.pad-xsv-sm.pad-xsv-bot-md > div11",
+"#leftRail > div.shipping-order.marg-lgv-bot-md > div:nth-child(2) > div.pad-xsv-sm.pad-xsv-bot-md > div",
+"body > main > div.nol-wrapper > div > div > div > div > div > div > div:nth-child(2) > div.ncol-xs-12.ncol-md-9.ncol-sm-12.marg-lgv-none > div > div.nol-ui.pad-xsv-hrz-md > div > div > div > div.enroll-today-form > div",
+"#myAccountAddress > div > div > div.nol-row.my-account-content.my-address-wrapper > div:nth-child(1) > ul",
+"#myAccountAddress > div > div > div.nol-row.my-account-content.my-address-wrapper > div:nth-child(2) > ul",
+"#pickUpInfo > div > div > div",
+"#leftRail > div.shipping-order.marg-lgv-bot-md > div:nth-child(2) > div.pad-xsv-sm.pad-xsv-bot-md > div",
+"#verify-address > div.modal-wrap > div.modal-content.nol-row"
+];
+
+/*END MASKING*/
+/* BEGIN extra */
+ _cls_config.clientAttributesEnabled=true;
+ _cls_config.clientAttributeMaxLength=500;
+ _cls_config.domPreciseStyleSheetCloning=true;
+ _cls_config.domRecordEnabled=true;
+ _cls_config.domRecordEnabledByChance=1;
+ _cls_config.domRecordCssRules=true;
+ _cls_config.domRecordCssProps=true;
+ _cls_config.recordAnimation=true;
+ _cls_config.recordClipboardContent=false;
+ _cls_config.recordClipboardEvents=false;
+ 
+/* BEGIN Replay Resources */  
+ _cls_config.resourcesRecordEnabled=true;
+ _cls_config.resourcesRecordCount=5;
+ _cls_config.resourcesRecordChance=1;
+ _cls_config.resourcesRecordAllowCors=true;
+ _cls_config.resourceRecordCssOnly=false;
+/* END Replay Resources */  
+ 
+/* BEGIN Struggle Recording */ 
+ _cls_config.collectStruggles=true; 
+ _cls_config.collectFormStruggles=true; 
+/* END Struggle Recording */
+
+/* BEGIN page performance */
+ _cls_config.resourceTimingRecordEnabled=true;
+ _cls_config.resourceTimingRecordEnabledByChance=0.05;
+ _cls_config.webVitalsRecordEnabled=true;
+/* END page performance */
+ 
+/* BEGIN exposure */
+ _cls_config.recordScrollReach=true;
+/* END exposure */
+ 
+/* BEGIN form tracking IM */
+ _cls_config.domFormAnalysisReporting=true;
+ _cls_config.domFormValidationTracking=true;
+ _cls_config.domIncludeCSSSelector=true;
+/* END form tracking IM */
+ 
+/* BEGIN window property */
+ _cls_config.pageAttributesEnabled=true;
+/* END window property */
+
+/* BEGIN Shadow DOM */
+ _cls_config.recordShadowDom=true;
+ _cls_config.recordNonNativeShadowAsElementContainer=true;
+/* END Shadow DOM */
+
+ _cls_config.domForceUpdateOnClick=true;
+
+//00057637
+_cls_config.captureGlobalObjects = ["digitalData.userInfo.userID", "digitalData.userInfo.ispunchoutUser","digitalData.userInfo.punchoutIntegrator","digitalData.userInfo.DCSTAR","digitalData.storeInfo.storeID","digitalData.cartInfo.cartId","digitalData.userInfo.prolinkID","digitalData.pageInfo.contentType","digitalData.customer.customerInfo.userID","digitalData.customer.customerInfo.storeID","digitalData.page.pageInfo.pageURL","digitalData.customer.customerInfo.DC","AAData.nolMemberID","AAData.myStoreID","AAData.authenticationStatus","AAData.dcID","AAData.cartId"];
+_cls_config.captureGlobalObjectsOnSegmentChange = true;
+
+//00058838
+_cls_config.botDetection = true;
+
+//00062318
+_cls_config.resourceIgnoreWhenUrlContains = ["/b/ss/"];
+
+/* END extra */
+
+/* BEGIN required */
+_cls_config.reportURI="https://report.c2101.gbqofs.io/bcksmn3g/reporting/d7e25f47-eb6d-699e-2ad4-e69ae1e94216/cls_report";
+/* END required */
+
+/* END Configuration */
+
+/* BEGIN V7 detector requirements */
+_cls_config.initDetectorOnInteractive = true;
+_cls_config.detectorPath = 'https://cdn.gbqofs.com/sv/b/';
+/* End V7 detector requrements */
